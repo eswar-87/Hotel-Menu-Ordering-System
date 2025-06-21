@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Menu Ordering System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Menu Ordering System</h1><hr>
+    <div class="menu">
+        <h2 style="color: black;">Menu</h2><hr>
+        <ul>
+            <li>
+                <span>Idly</span><t>
+                <span>Rs.10</span>
+                <input type="number" id="idly-quantity" value="0" min="0">
+                <button onclick="addItem('Idly', 10, document.getElementById('idly-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Dosa-Plain</span><t>
+                    <span>Rs.50</span>
+                    <input type="number" id="dosa-plain-quantity" value="0" min="0">
+                    <button onclick="addItem('Dosa-Plain', 50, document.getElementById('dosa-plain-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Dosa-Masala</span><t>
+                    <span>Rs.75</span>
+                    <input type="number" id="dosa-masala-quantity" value="0" min="0">
+                    <button onclick="addItem('Dosa-Masala', 50, document.getElementById('dosa-masala-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Poori</span><t>
+                    <span>Rs.50</span>
+                    <input type="number" id="poori-quantity" value="0" min="0">
+                    <button onclick="addItem('Poori', 50, document.getElementById('poori-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Bajji</span><t>
+                    <span>Rs.35</span>
+                    <input type="number" id="bajji-quantity" value="0" min="0">
+                    <button onclick="addItem('Bajji', 35, document.getElementById('bajji-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Pongal</span><t>
+                    <span>Rs.60</span>
+                    <input type="number" id="pongal-quantity" value="0" min="0">
+                    <button onclick="addItem('Pongal', 60, document.getElementById('pongal-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Tea</span><t>
+                    <span>Rs.15</span>
+                    <input type="number" id="tea-quantity" value="0" min="0">
+                    <button onclick="addItem('Tea', 15, document.getElementById('tea-quantity').value)">Add</button>
+            </li>
+            <li>
+                <span>Coffee</span><t>
+                    <span>Rs.20</span>
+                    <input type="number" id="coffee-quantity" value="0" min="0">
+                    <button onclick="addItem('Coffee', 20, document.getElementById('coffee-quantity').value)">Add</button>
+            </li>
+        </ul>
+    </div><hr>
+
+    <div class="order-summary">
+    <h2> Order Summary</h2>
+    <ul id="order-list"></ul>
+    <hr>
+    <p>Total: Rs. <span id="total-price">0</span></p>
+    <button onclick="generateBill()">Generate Bill</button>
+    </div>  
+
+    <div id="final-billing-summary" style="display: none;">
+        <h2> Final Billing Summary</h2>
+        <ul id="final-billing-list"></ul>
+        <hr>
+        <p>Total: Rs. <span id="final-total-price">0</span></p>
+        <button onclick="clearOrder()">Clear Order</button>
+        </div>  
+    </div>
+    <script src="script.js"></script>
+
+
+
+              
+    
+</body>
+</html>

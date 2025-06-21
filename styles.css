@@ -1,0 +1,71 @@
+body {
+    font-family: Arial,  sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: url(images/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(177, 49, 87, 0.1);
+    width: 60%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #3f15b1;
+}
+
+.menu, .order-summary #final-billing-summary {
+    margin-top: 20px;
+    color: rgb(235, 7, 7);
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: flex;
+    justify-content:space-between;
+    margin: 10px 0;
+    align-items: center;
+}
+
+button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+hr {
+    margin: 20px 0;
+}
+
+#order-list li, #final-billing-list li {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
