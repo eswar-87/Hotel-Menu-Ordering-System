@@ -1,89 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel Menu Ordering System</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hotel Menu Ordering System – Order your favourite South Indian dishes easily.">
+  <title>Hotel Menu Ordering System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hotel Menu Ordering System</h1><hr>
-    <div class="menu">
-        <h2 style="color: black;">Menu</h2><hr>
-        <ul>
-            <li>
-                <span>Idly</span><t>
-                <span>Rs.10</span>
-                <input type="number" id="idly-quantity" value="0" min="0">
-                <button onclick="addItem('Idly', 10, document.getElementById('idly-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Dosa-Plain</span><t>
-                    <span>Rs.50</span>
-                    <input type="number" id="dosa-plain-quantity" value="0" min="0">
-                    <button onclick="addItem('Dosa-Plain', 50, document.getElementById('dosa-plain-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Dosa-Masala</span><t>
-                    <span>Rs.75</span>
-                    <input type="number" id="dosa-masala-quantity" value="0" min="0">
-                    <button onclick="addItem('Dosa-Masala', 50, document.getElementById('dosa-masala-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Poori</span><t>
-                    <span>Rs.50</span>
-                    <input type="number" id="poori-quantity" value="0" min="0">
-                    <button onclick="addItem('Poori', 50, document.getElementById('poori-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Bajji</span><t>
-                    <span>Rs.35</span>
-                    <input type="number" id="bajji-quantity" value="0" min="0">
-                    <button onclick="addItem('Bajji', 35, document.getElementById('bajji-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Pongal</span><t>
-                    <span>Rs.60</span>
-                    <input type="number" id="pongal-quantity" value="0" min="0">
-                    <button onclick="addItem('Pongal', 60, document.getElementById('pongal-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Tea</span><t>
-                    <span>Rs.15</span>
-                    <input type="number" id="tea-quantity" value="0" min="0">
-                    <button onclick="addItem('Tea', 15, document.getElementById('tea-quantity').value)">Add</button>
-            </li>
-            <li>
-                <span>Coffee</span><t>
-                    <span>Rs.20</span>
-                    <input type="number" id="coffee-quantity" value="0" min="0">
-                    <button onclick="addItem('Coffee', 20, document.getElementById('coffee-quantity').value)">Add</button>
-            </li>
-        </ul>
-    </div><hr>
 
-    <div class="order-summary">
-    <h2> Order Summary</h2>
-    <ul id="order-list"></ul>
-    <hr>
-    <p>Total: Rs. <span id="total-price">0</span></p>
-    <button onclick="generateBill()">Generate Bill</button>
-    </div>  
+  <div class="container">
 
-    <div id="final-billing-summary" style="display: none;">
-        <h2> Final Billing Summary</h2>
-        <ul id="final-billing-list"></ul>
-        <hr>
-        <p>Total: Rs. <span id="final-total-price">0</span></p>
-        <button onclick="clearOrder()">Clear Order</button>
-        </div>  
-    </div>
-    <script src="script.js"></script>
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <span class="logo-icon" aria-hidden="true">🍽️</span>
+      <h1>Hotel Menu Ordering System</h1>
+      <p class="tagline">Fresh &amp; Tasty South Indian Cuisine</p>
+    </header>
 
+    <hr class="divider">
 
+    <!-- ── Menu ── -->
+    <section class="menu" aria-label="Menu">
+      <h2 class="section-title">
+        📋 Menu
+        <span class="badge">Today's Special</span>
+      </h2>
 
-              
-    
+      <ul id="menu-list">
+
+        <li class="menu-item">
+          <span class="item-name">Idly</span>
+          <span class="item-price">Rs.10</span>
+          <input type="number" id="idly-quantity" value="0" min="0" aria-label="Idly quantity">
+          <button class="btn-add"
+                  onclick="addItem('Idly', 10, document.getElementById('idly-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Dosa‑Plain</span>
+          <span class="item-price">Rs.50</span>
+          <input type="number" id="dosa-plain-quantity" value="0" min="0" aria-label="Dosa-Plain quantity">
+          <button class="btn-add"
+                  onclick="addItem('Dosa-Plain', 50, document.getElementById('dosa-plain-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Dosa‑Masala</span>
+          <span class="item-price">Rs.75</span>
+          <input type="number" id="dosa-masala-quantity" value="0" min="0" aria-label="Dosa-Masala quantity">
+          <button class="btn-add"
+                  onclick="addItem('Dosa-Masala', 75, document.getElementById('dosa-masala-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Poori</span>
+          <span class="item-price">Rs.50</span>
+          <input type="number" id="poori-quantity" value="0" min="0" aria-label="Poori quantity">
+          <button class="btn-add"
+                  onclick="addItem('Poori', 50, document.getElementById('poori-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Bajji</span>
+          <span class="item-price">Rs.35</span>
+          <input type="number" id="bajji-quantity" value="0" min="0" aria-label="Bajji quantity">
+          <button class="btn-add"
+                  onclick="addItem('Bajji', 35, document.getElementById('bajji-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Pongal</span>
+          <span class="item-price">Rs.60</span>
+          <input type="number" id="pongal-quantity" value="0" min="0" aria-label="Pongal quantity">
+          <button class="btn-add"
+                  onclick="addItem('Pongal', 60, document.getElementById('pongal-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Tea</span>
+          <span class="item-price">Rs.15</span>
+          <input type="number" id="tea-quantity" value="0" min="0" aria-label="Tea quantity">
+          <button class="btn-add"
+                  onclick="addItem('Tea', 15, document.getElementById('tea-quantity').value)">
+            Add
+          </button>
+        </li>
+
+        <li class="menu-item">
+          <span class="item-name">Coffee</span>
+          <span class="item-price">Rs.20</span>
+          <input type="number" id="coffee-quantity" value="0" min="0" aria-label="Coffee quantity">
+          <button class="btn-add"
+                  onclick="addItem('Coffee', 20, document.getElementById('coffee-quantity').value)">
+            Add
+          </button>
+        </li>
+
+      </ul>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ── Order Summary ── -->
+    <section class="order-summary" aria-label="Order Summary">
+      <h2 class="section-title">🛒 Order Summary</h2>
+
+      <ul id="order-list">
+        <li class="empty-state">No items added yet.</li>
+      </ul>
+
+      <hr class="divider">
+
+      <div class="total-row">
+        <span>Total</span>
+        <span class="total-amount">Rs. <span id="total-price">0</span></span>
+      </div>
+
+      <button class="btn-bill" onclick="generateBill()">🧾 Generate Bill</button>
+    </section>
+
+    <!-- ── Final Bill ── -->
+    <section id="final-billing-summary" style="display:none;" aria-label="Final Bill">
+      <h2>✅ Final Billing Summary</h2>
+
+      <ul id="final-billing-list"></ul>
+
+      <hr class="divider">
+
+      <div class="total-row">
+        <span>Grand Total</span>
+        <span class="total-amount">Rs. <span id="final-total-price">0</span></span>
+      </div>
+
+      <button class="btn-clear" onclick="clearOrder()">🗑️ Clear &amp; New Order</button>
+    </section>
+
+    <footer class="site-footer">
+      <p>© 2025 Hotel Menu Ordering System &bull; All rights reserved</p>
+    </footer>
+
+  </div><!-- /.container -->
+
+  <script src="script.js"></script>
 </body>
 </html>
